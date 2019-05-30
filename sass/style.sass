@@ -17,12 +17,12 @@
 $main-color: #f2e44c
 $accent-color: #f0c84f
 $background-color: #edead8
-$font-color: #1d1d1d
+$font-color: #3d3d3d
 
-$font: 'Myriad Pro Condensed', 'Helvetica Condensed', sans-serif
-$font-title: 'Bebas'
+$font: 'Myriad Pro', 'Helvetica Condensed', sans-serif
+$font-title: 'Bebas', sans-serif
 
-$base-font-size: 9
+$base-font-size: 8
 
 $font-size-normal: $base-font-size * 2px
 $font-size-big: $base-font-size * 3px
@@ -60,13 +60,16 @@ body
 		background-color: $background-color
 
 		.footer
-			margin-top: 6.5rem
+			margin-top: 1.5rem
+
+			@media screen and (min-width: $phone-size + 1px)
+				margin-top: 6.5rem
 
 	.overlay
 		top: 0
 		width: 100vw
 		height: 100vh
-		z-index: 10
+		z-index: 1000
 		position: fixed
 		background-color: $main-color
 		transition: 0.25s ease all
@@ -86,6 +89,8 @@ body
 				right: 0
 				transition: 0.25s ease all
 
+::placeholder
+	color: #e1e1e1
 
 
 // ==========================================================================
@@ -174,7 +179,7 @@ body
 
 @keyframes floatJiggle
 	100%
-		transform: rotate(350deg)
+		transform: rotate(345deg)
 
 @keyframes shakey
 	0%
@@ -183,6 +188,13 @@ body
 		transform: rotate(0.5deg)
 	100%
 		transform: rotate(-0.5deg)
+
+@keyframes leave
+	0%
+		right: 10%
+	100%
+		right: -150%
+
 
 // ==========================================================================
 //  Markup Styles
@@ -226,13 +238,11 @@ h2
 p, li
 	margin: 1rem 0
 	line-height: 1.25
-
-	@media screen and (min-width: $tablet-size)
-		font-size: $font-size-normal + 2px
+	font-size: $font-size-normal
 
 	&.jumbo	
 		@media screen and (min-width: $tablet-size)
-			font-size: $font-size-big
+			font-size: $font-size-normal + 2px
 
 ul.services-list
 	height: 100%
@@ -242,9 +252,10 @@ ul.services-list
 
 	font-family: $font-title
 	font-weight: bold
-
+	text-align: center
+	
 	@media screen and (min-width: $tablet-size)
-		padding-bottom: 120px
+		padding-bottom: 80px
 
 	li
 		font-size: $font-size-big
@@ -254,6 +265,7 @@ ul.services-list
 		      transition-delay: $i * (0.4s / 4)
 
 		@media screen and (min-width: $tablet-size)
+			text-align: left
 			font-size: $font-size-title-big
 
 		a:hover
@@ -288,8 +300,6 @@ strong, .is-bold
 	justify-content: space-between
 	flex-direction: column
 	align-items: center
-
-	font-size: 20px
 
 	@media screen and (min-width: $tablet-size)
 		flex-direction: row
@@ -362,16 +372,29 @@ strong, .is-bold
 			height: 5px
 			width: 100%
 			margin: 5px 0
-			background-color: $font-color
+			background-color: white
 
 .navbar-bottom
 	position: fixed
-	z-index: 9
+	z-index: 30
 
 	top: 0
 	width: 100%
-	background-color: $font-color
-	color: white
+	color: black
+
+	.navbar-brand
+		filter: invert(0.8)
+
+	&.home
+		background: #151515
+		color: white
+
+		@media screen and (min-width: $tablet-size)
+			background: transparent
+
+
+		.navbar-brand
+			filter: invert(0)
 
 	.container
 		@media screen and (max-width: $tablet-size)
@@ -412,8 +435,14 @@ strong, .is-bold
 		@media screen and (min-width: $tablet-size - 1px)
 			overflow: visible
 
+	&.is-center
+		justify-content: center
+
 	&.the-astronaut
 		padding-top: 400px
+
+		.is-7
+			z-index: 12
 
 		.column
 			@media screen and (min-width: $tablet-size - 1px) and (max-width: $desktop-size)
@@ -421,7 +450,6 @@ strong, .is-bold
 
 		@media screen and (min-width: $tablet-size - 1px)
 			padding-top: 0
-			padding-bottom: 200px
 
 		@media screen and (min-width: $desktop-size)
 			padding-bottom: 0
@@ -438,9 +466,9 @@ strong, .is-bold
 			@media screen and (min-width: $tablet-size)
 				left: 50%
 
-		.image
+		div.image
 			width: 300px
-			transform: rotate(-10deg)
+			transform: rotate(-15deg)
 			position: absolute
 			right: -5%
 			top: 0
@@ -452,18 +480,57 @@ strong, .is-bold
 			&.animated
 				animation: floatJiggle ease 1s
 
+			&.leave
+				animation: leave ease 10s
+				animation-fill-mode: forwards
+				cursor: not-allowed
+
 			@media screen and (min-width: $tablet-size)
-				width: 425px
 				right: 10%
 			@media screen and (min-width: $tablet-size - 1px) and (max-width: $desktop-size)
-				width: 265px
 				right: 12%
-			@media screen and (min-width: $desktop-size)
-				position: relative
-				width: 325px
+
+		div.the-heart
+			width: 50px
+			height: 50px
+
+			background: url('img/corazon.png')
+			background-position: center
+			background-repeat: no-repeat
+			background-size: 90%
+
+			position: absolute
+			top: 7.2%
+			left: 42.6%
+			z-index: 29
+			display: inline-block
+
+			&:before
+				content: " "
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				bottom: 0
 				right: 0
-			@media screen and (min-width: $fullhd-size)
-				width: 325px
+				background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06))
+				z-index: 2
+				background-size: 100% 2px, 3px 100%
+				pointer-events: none
+
+			&:after
+				content: " "
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				bottom: 0
+				right: 0
+				background: rgba(18, 16, 16, 0.2)
+				opacity: 0
+				z-index: 2
+				pointer-events: none
+				animation: tvFlicker 0.15s infinite
 
 
 	&.the-macintosh
@@ -489,7 +556,8 @@ strong, .is-bold
 
 			&.animacion
 				animation: changeChannel 0.05s linear
-				background-image: url('img/servicio-animacion.jpg')
+				filter: grayscale(1)
+				background-image: url('img/servicio-animacion.gif')
 
 
 			&.video
@@ -544,7 +612,6 @@ strong, .is-bold
 
 		@media screen and (min-width: $phone-size)
 			padding: 0 15px
-			width: auto
 
 		&.is-image
 
@@ -560,6 +627,14 @@ strong, .is-bold
 					right: 0
 					left: 0
 
+		&.is-10
+			@media screen and (min-width: $tablet-size)
+				max-width: 83%
+
+		&.is-7
+			@media screen and (min-width: $tablet-size)
+				max-width: 58.1%
+
 		&.is-6
 			@media screen and (min-width: $tablet-size)
 				max-width: 49.8%
@@ -569,12 +644,16 @@ strong, .is-bold
 				max-width: 41.5%
 
 		&.is-4
-			@media screen and (min-width: $tablet-size)
+			@media screen and (min-width: $tablet-size - 1px)
+				max-width: 49.8%
+			@media screen and (min-width: $desktop-size)
 				max-width: 33.2%
 
 		&.is-3
 			max-width: 49.8%
-			@media screen and (min-width: $tablet-size)
+			@media screen and (min-width: $tablet-size - 1px)
+				max-width: 33.2%
+			@media screen and (min-width: $desktop-size)
 				max-width: 24.1%
 
 //
@@ -582,10 +661,10 @@ strong, .is-bold
 // --------------------------------------------------------------------------
 
 .section
-	padding: 12.5rem 0 0
+	padding: 3.5rem 0 0
 
-	@media screen and (min-width: $fullhd-size)
-		padding-top: 0
+	@media screen and (min-width: $tablet-size)
+		padding-top: 36px
 
 	&-category
 		padding: 5.5rem 0 2.5rem
@@ -595,7 +674,7 @@ strong, .is-bold
 
 		h1
 			margin: 1rem
-			font-size: $base-font-size * 8px
+			font-size: $base-font-size * 7px
 
 		div.text
 			text-align: right
@@ -634,27 +713,39 @@ strong, .is-bold
 			position: relative
 			z-index: 3
 
+		&.fotografia
+			.column.is-image .image
+				width: 70%
+
 		&.video
 			.column.is-image .image
 				position: relative
 				left: 20px
 				width: 120%
 				@media screen and (min-width: $tablet-size)
-					width: 100%
+					width: 75%
 
 		&.marketing
 			.column.is-image .image
 				position: relative
-				width: 126%
+				width: 90%
 				left: 10%
 				bottom: 0
 
 		&.animacion
+			.columns
+				flex-direction: column
+
+				@media screen and (min-width: $tablet-size)
+					flex-direction: row-reverse
+
+			.column.text
+				text-align: left
+
 			.column.is-image .image
 				position: relative	
-				width: 150%
-				left: -20%
-				bottom: 10%
+				width: 100%
+				bottom: -10%
 
 	&-content
 		padding: 2.5rem 0
@@ -667,7 +758,6 @@ strong, .is-bold
 		align-items: center
 
 		height: 100vh
-		background-color: rgba(12,12,12,0.9)
 
 		padding: 0
 
@@ -678,6 +768,48 @@ strong, .is-bold
 		background-image: url("img/video-background.jpg")
 		background-size: cover
 		background-position: center
+
+		@media screen and (min-width: $tablet-size)
+			background-color: rgba(12,12,12,0.9)
+
+		.video-container
+
+			position: absolute
+			z-index: -50
+
+			width: 100%
+			height: 100%
+
+			overflow: hidden
+
+			video
+
+				position: absolute
+
+				top: 50%
+				left: 50%
+
+				min-width: 100%
+				min-height: 100%
+
+				width: auto
+				height: auto
+
+				-webkit-transform: translateX(-50%) translateY(-50%)
+				transform: translateX(-50%) translateY(-50%)
+
+				display: none
+
+				@media screen and (min-width: $tablet-size)
+					display: block
+
+		.overlay
+			position: absolute
+			z-index: -49
+
+			width: 100%
+			height: 100%
+			background-color: rgba(12,12,12,0.666)
 
 		a img
 			width: 64px
@@ -698,11 +830,11 @@ strong, .is-bold
 			padding-top: 0
 		
 		.instagram
-			position: relative
-			z-index: 7
 			display: none
+			position: relative
+			margin-top: 100px
 
-			@media screen and (min-width: $tablet-size)
+			@media screen and (min-width: $phone-size + 1px)
 				display: block
 
 	&-testimonios
@@ -715,9 +847,6 @@ strong, .is-bold
 				justify-content: center
 				flex-direction: column
 				margin-left: 1rem
-		
-		.column
-			margin: 1rem 0
 
 		span
 			font-style: italic
@@ -752,6 +881,7 @@ strong, .is-bold
 				display: block
 
 		h1
+			text-align: center
 			margin: 0
 			@media screen and (min-width: $desktop-size)
 				position: absolute
@@ -759,9 +889,10 @@ strong, .is-bold
 				left: 0
 				transform: translateY(-50%)
 
-		.columns
+		.columns.full
 			@media screen and (min-width: $desktop-size)
-				width: 80%
+				width: 75%
+				flex-direction: column
 
 		.column.is-3
 
@@ -775,19 +906,34 @@ strong, .is-bold
 			text-align: center
 			@media screen and (min-width: $tablet-size)
 				margin: 1rem 0 3rem 0
-		.image
+		
+
+		.column.has-image
 			position: relative
-			bottom: -66px
+			display: none
+
+			@media screen and (min-width: $tablet-size)
+				display: block
+
+		div.image
+			width: 80%
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
 
 		.image-phone
 			position: absolute
+
+			@media screen and (min-width: $tablet-size)
+				position: absolute
 
 			&.animated
 				animation: shakey 0.15s infinite
 
 
 		.image-base
-			position: absolute
+			position: relative
 
 	&-blog
 		padding: 3.5rem 0
@@ -812,23 +958,23 @@ strong, .is-bold
 			border-bottom: 2px solid $font-color
 
 			@media screen and (min-width: $tablet-size)
-				font-size: 72px
+				font-size: 56px
 				padding: 20px 0
 
 		h2
 			margin-bottom: 0
 			font-weight: bold
-			font-size: 36px
+			font-size: 24px
 
 			@media screen and (min-width: $tablet-size)
-				font-size: 54px
+				font-size: 36px
 
 		span
 			display: block
 			margin: 0.25rem 0 1rem
 
 			color: #3a3a3a
-			font-size: 18px
+			font-size: 14px
 			font-style: italic
 
 		.blogpost-image
@@ -837,14 +983,29 @@ strong, .is-bold
 			background-size: cover
 			background-position: center
 
-		.blogpost p
-			color: #3a3a3a
-			font-size: 20px
-			line-height: 1.5
-			margin-bottom: 18px
+		.blogpost 
 
-			@media screen and (min-width: $tablet-size)
-				font-size: 24px
+			p
+				color: #3a3a3a
+				font-size: 16px
+				line-height: 1.5
+				margin-bottom: 18px
+
+			.wp-block-embed__wrapper iframe
+				margin: 0 auto !important
+
+			blockquote
+				margin-bottom: 18px
+				padding-left: 25px
+				border-left: 5px solid $main-color
+
+				p
+					font-style: italic
+					font-size: 26px
+					margin-bottom: 9px
+
+				cite::before
+						content: "~ "
 
 //
 // Container
@@ -868,12 +1029,18 @@ strong, .is-bold
 // ==========================================================================
 
 .header	
-	background-color: $font-color
+	background-color: #151515
 	color: white
 
+	&.blog
+		background-color: #f4f2e8
+
+	@media screen and (min-width: $desktop-size)
+		background-color: $background-color
+		color: $font-color
+
 	.container
-		@media screen and (max-width: $phone-size)
-			padding: 0
+		padding: 0
 
 .footer
 	padding: 1.5rem 0
@@ -912,7 +1079,7 @@ strong, .is-bold
 		box-sizing: border-box
 
 		border: none
-		border-bottom: 2.5px solid $background-color
+		border-bottom: 2.5px solid #e1e1e1
 
 		margin: 0.5rem 0
 		padding: 1rem
@@ -928,7 +1095,7 @@ strong, .is-bold
 
 
 	textarea
-		height: 150px
+		height: 100px
 
 	input[type=submit]
 		border: none
@@ -936,8 +1103,17 @@ strong, .is-bold
 		text-transform: uppercase
 		font-weight: bold
 
-		background-color: $main-color
+		background-color: white
 		color: $font-color
+
+		transition: 0.25s ease all
+
+		&:hover
+			transition: 0.25s ease all
+
+			background-color: $main-color
+			color: $font-color
+	
 
 // ==========================================================================
 //  Social Media Buttons
@@ -1026,20 +1202,26 @@ strong, .is-bold
 			padding: 20px 25px
 
 // ==========================================================================
-//  Video BG
+//  Page
 // ==========================================================================
 
-.main-video
-	display: none
+.page
+	padding: 2rem 0
 
-	z-index: -1
+	h1, h2, h3, h4
+		font-weight: bold
 
-	left: 50%
-	min-height: 100%
-	min-width: 100%
-	position: absolute
-	top: 50%
-	transform: translate(-50%, -50%)
+	&.landing
+		h1.center
+			font-size: $base-font-size * 6px
+			text-align: center
 
-	@media screen and (min-width: $tablet-size)
-		display: block
+			@media screen and (min-width: $phone-size)
+				font-size: $base-font-size * 9px
+		p
+			font-size: 18px
+			line-height: 1.5
+
+		.columns:nth-of-type(2)
+			@media screen and (min-width: $phone-size)
+				padding-top: 3rem

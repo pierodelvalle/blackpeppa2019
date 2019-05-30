@@ -4,10 +4,10 @@ function create_post_type() {
 	register_post_type('video',
 		array(
 			'labels' => array(
-				'name' => __('Producción de Video'),
+				'name' => __('Video'),
 				'singular_name' => __('Video' )
 		 ),
-			'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, culpa! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti mollitia repellat voluptatibus assumenda, autem unde dolores reprehenderit porro. Ullam non libero, voluptates accusamus facilis, impedit deserunt. Accusamus quo eveniet magnam officiis a, veritatis officia veniam architecto et eligendi laudantium odit maxime possimus, cum, nihil ipsum, autem deserunt doloremque nulla vero.',
+			'description' => '<p><strong>¿Por qué todas las marcas están haciendo video?</strong></p><p>Comunicas más en menos tiempo. <strong>El video es una herramienta que logra quedarse más tiempo en la memoria de las personas</strong> ya que genera sensaciones y engancha más rápido con el publico objetivo siempre y cuando tengas clara las expectativas de tu potencial cliente. </p><p>El contenido audiovisual en una estrategia de marketing no solo sirve para trabajar branding y el posicionamiento en buscadores, también genera conversiones que es lo todas las marcas estamos buscando.</p><p>Además el video también es muy poderoso en la comunicación interna ya que nos ayuda a transmitir de manera rápida y eficiente las campañas internas que en su gran mayoría tiene en el objetivo de lograr un excelente clima laboral el cual se traduce en mejora de productividad.</p>',
 			'public' => true,
 			'featured_video' => 'unGw7IKd4Es',
 			'has_archive' => true,
@@ -19,7 +19,7 @@ function create_post_type() {
 				'name' => __('Animación 2D'),
 				'singular_name' => __('Animación' )
 		 ),
-			'description' => '<strong>¿Tienes un nuevo producto o estas renovando tu servicio?</strong> ¿Quieres dar a conocer a tus clientes cómo utilizar tu producto o servicios y las ventajas del mismo? Las animaciones 2D no solo son atractivas, sino que también tienen un gran alcance orgánico (sin costo) y un alto engagement (reacciones de las personas que lo ven). Ya te habrás dado cuenta que todos lo están haciendo, sin mencionar a tu competencia.',
+			'description' => '<p>Y si te preguntas: <strong>¿Qué tipos de animaciones me pueden servir?</strong> Ahí entramos nosotros,tras una reunión contigo sabremos cuales serían las ideas más idóneas para tu negocio o alguna campaña que tengas en mente,estos son algunos ejemplos:</p><ul><li class="ul-list"><strong>Videos explicativos:</strong>Das a conocer tus productos o servicios de forma sencilla y dinámica utilizando gráficos atractivos y locución en off.</li><li class="ul-list"><strong>Videos tutoriales:</strong> Explicar un procedimiento o mostrar cómo funciona un producto o servicio a tus clientes o colaboradores utilizando imágenes facilita su comprensión y genera mucha atención y recordación. Ya lo sabías,ahora solo falta que nos llames.</li><li class="ul-list"><strong>Videos de Storytelling:</strong> Cuenta historias para transmitir tus mensajes. Las historias ayudan a generar curiosidad en los usuarios y fidelizar aún más a tus clientes.</li></ul><p>Este es un formato que sin duda alguna logrará que tus objetivos de comunicación sean efectivos.</p>',
 			'public' => true,
 			'featured_video' => '7teIpLkHf_E',
 			'has_archive' => true,
@@ -28,10 +28,10 @@ function create_post_type() {
 	register_post_type('fotografia',
 		array(
 			'labels' => array(
-				'name' => __('Producción Fotográfica'),
+				'name' => __('Fotografía'),
 				'singular_name' => __('Fotografía' )
 		 ),
-			'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, sinfinus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. At est voluptatum aspernatur a cupiditate molestiae magnam soluta saepe, explicabo, vitae dicta assumenda illo dolores debitis quasi error. Illum, dolorem earum!',
+			'description' => '<p>El éxito de una campaña o pieza comunicacional radica en una buena fotografía, y saber su funcionalidad y publico objetivo es la base. A continuación les mostramos algunos tipos de fotografía que trabajamos. </p><ul><li><strong>Comercial:</strong> Son fotos hechas para vender sensaciones y reflejar las necesidades del público objetivo.</li><li><strong>Corporativa:</strong> Llevan el ADN de la compañía, reflejan la cultura y espíritu de los colaboradores en sus diferentes funciones y espacios. Se utilizan para presentaciones, informes anuales, piezas de comunicación interna entre otros.</li><li><strong>Industrial:</strong> Se realizan en plantas y fábricas, se encarga de mostrar no sólo la cultura de la compañía sino también la seguridad ocupacional, gestión sanitaria, y buenas practicas en los procesos de trabajo.</li><li><strong>Interiorismo:</strong> Lo importante es capturar la esencia de la propuesta del arquitecto, respetar la proporcionalidad y temperatura de color del espacio.</li><li><strong>Gastronómica:</strong> ¡Comemos por los ojos! Por eso proyectar la mejor y más deliciosa imagen de los platos es su objetivo</li></ul>',
 			'public' => true,
 			'featured_video' => 'I2rafKLz4KE',
 			'has_archive' => true,
@@ -43,7 +43,7 @@ function create_post_type() {
 				'name' => __('Marketing Digital'),
 				'singular_name' => __('Marketing' )
 		 ),
-			'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, sinfinus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. At est voluptatum aspernatur a cupiditate molestiae magnam soluta saepe, explicabo, vitae dicta assumenda illo dolores debitis quasi error. Illum, dolorem earum!',
+			'description' => '<p>Todas las empresas pueden posicionarse en internet, solo necesitan tener su espacio en el mundo digital de manera acorde a su tamaño y a su historia en el mundo real, logrando así recrear el vinculo empresa-consumidor en este nuevo mundo online. </p><ul><li><strong>Publicidad Digital:</strong> Aplicamos estrategias y creamos anuncios creativos y competitivos en Google ads, Facebook e Instagram ads.</li><li><strong>Redes Sociales:</strong> Administramos de forma integral tus redes sociales. Nos ocupamos tanto de la estrategia, como del contenido, el diseño y la moderación.</li></ul>',
 			'public' => true,
 			'featured_video' => '2FzZDhKSJt8',
 			'has_archive' => true,

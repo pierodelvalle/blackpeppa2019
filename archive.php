@@ -28,13 +28,7 @@ if ( $post_type ) {
 	<div class="container">
 		<div class="columns">
 			<div class="column">
-				<p>Y si te preguntas: <strong>¿Qué tipos de animaciones me pueden servir?</strong> Ahí entramos nosotros, tras una reunión contigo sabremos cuales serían las ideas más idóneas para tu negocio o alguna campaña que tengas en mente, estos son algunos ejemplos:</p>
-				<ul>
-					<li class="ul-list"><strong>Videos explicativos: </strong> Das a conocer tus productos o servicios de forma sencilla y dinámica utilizando gráficos atractivos y locución en off.</li>
-					<li class="ul-list"><strong>Videos tutoriales: </strong> Explicar un procedimiento o mostrar cómo funciona un producto o servicio a tus clientes o colaboradores utilizando imágenes facilita su comprensión y genera mucha atención y recordación. Ya lo sabías, ahora solo falta que nos llames.</li>
-					<li class="ul-list"><strong>Videos de Storytelling: </strong> Cuenta historias para transmitir tus mensajes. Las historias ayudan a generar curiosidad en los usuarios y fidelizar aún más a tus clientes.</li>
-				</ul>
-				<p>Este es un formato que sin duda alguna logrará que tus objetivos de comunicación sean efectivos.</p>
+				<?= $post_type_data->description ?>
 			</div>
 			<div class="column is-6" data-aos="flip-left">
 				<?php get_template_part('partials/contact') ?>

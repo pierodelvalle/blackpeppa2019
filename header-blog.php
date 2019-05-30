@@ -24,22 +24,49 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Start Favicon Stuff -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#f2e44c">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#f2e44c">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141028592-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-141028592-1');
+	</script>
 </head>
 <body>
-	<header class="header">
+	<header class="header blog">
 		<div class="container">
 			<nav class="navbar">
 				<div class="navbar-brand">
-					<a href="<?= get_site_url(); ?>/"><img class="mobile" src="<?= get_template_directory_uri(); ?>/img/bp-logo-blanco-small.svg" alt="Black Peppa Digital" height="50"></a>
-					<a href="<?= get_site_url(); ?>/"><img class="desktop" src="<?= get_template_directory_uri(); ?>/img/bp-logo-blanco.svg" alt="Black Peppa Digital" height="50"></a>
+					<a href="/"><img class="mobile" src="<?= get_template_directory_uri(); ?>/img/bp-logo-blanco-small.svg" alt="Black Peppa Digital" height="50"></a>
+					<a href="/"><img class="desktop" src="<?= get_template_directory_uri(); ?>/img/bp-logo-negro.svg" alt="Black Peppa Digital" height="50"></a>
 					<span id="menu-button"><div></div><div></div><div></div></span>
 				</div>
 				<div class="navbar-content">
-					<a href="<?= get_site_url(); ?>/#nosotros" class="navbar-item">Nosotros</a>
-					<a href="<?= get_site_url(); ?>/#servicios" class="navbar-item">Servicios</a>
-					<a href="<?= get_site_url(); ?>/#clientes" class="navbar-item">Clientes</a>
-					<a href="<?= get_site_url(); ?>/#contacto" class="navbar-item">Contacto</a>
-					<a href="<?= get_site_url(); ?>/blog" class="navbar-item">Blog</a>
+					<a href="/#nosotros" class="navbar-item">Nosotros</a>
+					<a href="/#servicios" class="navbar-item">Servicios</a>
+					<a href="/#clientes" class="navbar-item">Clientes</a>
+					<a href="/#contacto" class="navbar-item">Contacto</a>
+					<a href="/blog" class="navbar-item">Blog</a>
 				</div>
 			</nav>
 		</div>

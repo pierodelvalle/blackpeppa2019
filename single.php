@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('blog'); ?>
 <section class="section section-blog">
 	<div class="container">
 		<a href="/blog">← Regresar a Blog</a>
