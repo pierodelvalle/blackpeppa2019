@@ -38,7 +38,7 @@ body {
     body .overlay-enter {
       right: 0; }
       body .overlay-enter.animate {
-        right: 100vw;
+        right: 120vw;
         transition: 0.25s ease all; }
     body .overlay-exit {
       right: -100vw; }
@@ -810,8 +810,10 @@ strong, .is-bold {
 .header {
   background-color: #151515;
   color: white; }
-  .header.blog {
-    background-color: #f4f2e8; }
+  @media screen and (min-width: 1024px) {
+    .header.blog {
+      background-color: #f4f2e8;
+      color: #3d3d3d; } }
   @media screen and (min-width: 1024px) {
     .header {
       background-color: #edead8;
@@ -868,6 +870,11 @@ strong, .is-bold {
       transition: 0.25s ease all;
       background-color: #f2e44c;
       color: #3d3d3d; }
+    .form input[type=submit]:focus {
+      background-color: #ece8b5; }
+    .form input[type=submit]:disabled {
+      background-color: #a5a5a5;
+      color: white; }
 
 .social-media {
   margin: 1rem 0 0;
@@ -935,15 +942,31 @@ strong, .is-bold {
   padding: 2rem 0; }
   .page h1, .page h2, .page h3, .page h4 {
     font-weight: bold; }
-  .page.landing h1.center {
-    font-size: 48px;
-    text-align: center; }
-    @media screen and (min-width: 481px) {
-      .page.landing h1.center {
-        font-size: 72px; } }
+  @media screen and (min-width: 1024px) {
+    .page.landing .container {
+      padding: 0; } }
+  .page.landing h1 {
+    font-size: 40px; }
+  .page.landing h2 {
+    font-size: 32px; }
   .page.landing p {
     font-size: 18px;
     line-height: 1.5; }
+  .page.landing form {
+    padding: 2rem; }
+    @media screen and (min-width: 1024px) {
+      .page.landing form {
+        padding: 2.75rem;
+        height: 100%; } }
+  .page.landing textarea {
+    display: none; }
   @media screen and (min-width: 481px) {
-    .page.landing .columns:nth-of-type(2) {
+    .page.landing .columns:nth-of-type(3) {
       padding-top: 3rem; } }
+
+.rc-anchor-light .rc-anchor-pt a:link,
+.rc-anchor-light .rc-anchor-pt a:visited,
+.rc-anchor-light .rc-anchor-logo-text,
+.rc-anchor-light {
+  background: transparent !important;
+  color: white !important; }

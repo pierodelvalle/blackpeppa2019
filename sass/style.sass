@@ -78,7 +78,7 @@ body
 			right: 0
 
 			&.animate
-				right: 100vw
+				right: 120vw
 				transition: 0.25s ease all
 
 
@@ -1033,7 +1033,9 @@ strong, .is-bold
 	color: white
 
 	&.blog
-		background-color: #f4f2e8
+		@media screen and (min-width: $desktop-size)
+			background-color: #f4f2e8
+			color: $font-color
 
 	@media screen and (min-width: $desktop-size)
 		background-color: $background-color
@@ -1113,6 +1115,14 @@ strong, .is-bold
 
 			background-color: $main-color
 			color: $font-color
+
+		&:focus
+			background-color: #ece8b5
+
+		&:disabled
+			background-color: #a5a5a5
+			color: white
+
 	
 
 // ==========================================================================
@@ -1212,16 +1222,35 @@ strong, .is-bold
 		font-weight: bold
 
 	&.landing
-		h1.center
-			font-size: $base-font-size * 6px
-			text-align: center
 
-			@media screen and (min-width: $phone-size)
-				font-size: $base-font-size * 9px
+		.container
+			@media screen and (min-width: $desktop-size)
+				padding: 0
+
+		h1
+			font-size: $base-font-size * 5px
+		h2
+			font-size: $base-font-size * 4px
 		p
 			font-size: 18px
 			line-height: 1.5
 
-		.columns:nth-of-type(2)
+		form
+			padding: 2rem
+			@media screen and (min-width: $desktop-size)
+				padding: 2.75rem
+				height: 100%
+
+		textarea
+			display: none
+
+		.columns:nth-of-type(3)
 			@media screen and (min-width: $phone-size)
 				padding-top: 3rem
+
+.rc-anchor-light .rc-anchor-pt a:link,
+.rc-anchor-light .rc-anchor-pt a:visited,
+.rc-anchor-light .rc-anchor-logo-text,
+.rc-anchor-light
+	background: transparent !important
+	color: white !important

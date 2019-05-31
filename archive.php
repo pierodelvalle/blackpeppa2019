@@ -7,6 +7,9 @@ if ( $post_type ) {
     $post_type_data = get_post_type_object( $post_type );
     $post_type_slug = $post_type_data->rewrite['slug'];
 }
+
+$pagename = ucfirst($post_type_data->rewrite['slug']);
+set_query_var('pagename', $pagename);
 ?>
 <section class="section section-category <?= $post_type_slug ?>">
 	<div class="container">
@@ -20,7 +23,7 @@ if ( $post_type ) {
 					<img src="<?= get_template_directory_uri(); ?>/img/<?= $post_type_slug ?>.png" alt="<?php post_type_archive_title(); ?>">
 				</div>
 			</div>
-			<div class="yellow-square"></div>	
+			<div class="yellow-square"></div>
 		</div>
 	</div>
 </section>

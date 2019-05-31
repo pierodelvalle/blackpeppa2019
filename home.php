@@ -1,4 +1,7 @@
-<?php get_header('home') ?>
+<?php get_header('home');
+
+$pagename = "Inicio";
+set_query_var('pagename', $pagename); ?>
 <div class="navbar-bottom home">
 	<div class="container">
 		<nav class="navbar">
